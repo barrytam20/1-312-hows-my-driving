@@ -6,7 +6,7 @@ from flask import render_template
 from sodapy import Socrata
 import sqlite3
 import requests
-
+import os
 
 #################################################################################
 # ./data/1-312-data.db Database format
@@ -29,7 +29,7 @@ import requests
 client = Socrata("data.seattle.gov", None)
 LICENSE_DATASET = "enxu-fgzb"
 SALARY_DATASET = "2khk-5ukd"
-DATA_API_HOST = "https://spd-lookup.herokuapp.com"
+DATA_API_HOST = os.getenv("API_HOST")
 
 
 class RosterRecord(NamedTuple):

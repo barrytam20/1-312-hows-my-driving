@@ -7,6 +7,9 @@ BEGIN
 
     RETURN;
 END; $$
+LANGUAGE 'plpgsql'
+SECURITY DEFINER
+SET search_path =public, pg_temp;
 
 CREATE OR REPLACE FUNCTION search_officer_by_name_p(
     first_name  VARCHAR(100),
@@ -21,6 +24,9 @@ BEGIN
 
     RETURN;
 END; $$
+LANGUAGE 'plpgsql'
+SECURITY DEFINER
+SET search_path =public, pg_temp;
 
 CREATE OR REPLACE FUNCTION fuzzy_search_officer_by_first_name_p(first_name  VARCHAR(100))
     RETURNS SETOF officers AS $$
@@ -32,6 +38,9 @@ BEGIN
 
     RETURN;
 END; $$
+LANGUAGE 'plpgsql'
+SECURITY DEFINER
+SET search_path =public, pg_temp;
 
 CREATE OR REPLACE FUNCTION fuzzy_search_officer_by_last_name_p(last_name  VARCHAR(100))
     RETURNS SETOF officers AS $$
@@ -43,6 +52,9 @@ BEGIN
 
     RETURN;
 END; $$
+LANGUAGE 'plpgsql'
+SECURITY DEFINER
+SET search_path =public, pg_temp;
 
 CREATE OR REPLACE FUNCTION fuzzy_search_officer_by_name_p(full_name  VARCHAR(100))
     RETURNS SETOF officers AS $$
